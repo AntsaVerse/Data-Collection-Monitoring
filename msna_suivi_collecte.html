@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>MSNA 2026</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="msna_suivi_collecte_files/libs/clipboard/clipboard.min.js"></script>
+<script src="msna_suivi_collecte_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="msna_suivi_collecte_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="msna_suivi_collecte_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="msna_suivi_collecte_files/libs/quarto-html/popper.min.js"></script>
+<script src="msna_suivi_collecte_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="msna_suivi_collecte_files/libs/quarto-html/anchor.min.js"></script>
+<link href="msna_suivi_collecte_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="msna_suivi_collecte_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="msna_suivi_collecte_files/libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="msna_suivi_collecte_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="msna_suivi_collecte_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="msna_suivi_collecte_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="msna_suivi_collecte_files/libs/bootstrap/bootstrap-890b18279d630a8af0357820e6fbb7bc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="msna_suivi_collecte_files/libs/bootstrap/bootstrap-dark-890b18279d630a8af0357820e6fbb7bc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="msna_suivi_collecte_files/libs/bootstrap/bootstrap-890b18279d630a8af0357820e6fbb7bc.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="msna_suivi_collecte_files/libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="msna_suivi_collecte_files/libs/quarto-dashboard/stickythead.js"></script>
+
+
+
+<script src="msna_suivi_collecte_files/libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="msna_suivi_collecte_files/libs/quarto-dashboard/components.js"></script>
+
+<link href="msna_suivi_collecte_files/libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="msna_suivi_collecte_files/libs/bslib-component-js-0.9.0/components.min.js"></script>
+
+<script src="msna_suivi_collecte_files/libs/bslib-component-js-0.9.0/web-components.min.js" type="module"></script>
+
+<link href="msna_suivi_collecte_files/libs/bslib-component-css-0.9.0/components.css" rel="stylesheet">
+
+<script src="msna_suivi_collecte_files/libs/bslib-tag-require-0.9.0/tag-require.js"></script>
+
+<script src="msna_suivi_collecte_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="msna_suivi_collecte_files/libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="msna_suivi_collecte_files/libs/datatables-binding-0.34.0/datatables.js"></script>
+
+<script src="msna_suivi_collecte_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="msna_suivi_collecte_files/libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="msna_suivi_collecte_files/libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="msna_suivi_collecte_files/libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<script src="msna_suivi_collecte_files/libs/jszip-1.13.6/jszip.min.js"></script>
+
+<link href="msna_suivi_collecte_files/libs/dt-ext-buttons-1.13.6/css/buttons.dataTables.min.css" rel="stylesheet">
+
+<script src="msna_suivi_collecte_files/libs/dt-ext-buttons-1.13.6/js/dataTables.buttons.min.js"></script>
+
+<script src="msna_suivi_collecte_files/libs/dt-ext-buttons-1.13.6/js/buttons.html5.min.js"></script>
+
+<script src="msna_suivi_collecte_files/libs/dt-ext-buttons-1.13.6/js/buttons.colVis.min.js"></script>
+
+<script src="msna_suivi_collecte_files/libs/dt-ext-buttons-1.13.6/js/buttons.print.min.js"></script>
+
+<link href="msna_suivi_collecte_files/libs/dt-ext-fixedheader-1.13.6/css/fixedHeader.dataTables.min.css" rel="stylesheet">
+
+<script src="msna_suivi_collecte_files/libs/dt-ext-fixedheader-1.13.6/js/dataTables.fixedHeader.min.js"></script>
+
+<link href="msna_suivi_collecte_files/libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="msna_suivi_collecte_files/libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
+
+
+</head>
+
+<body class="quarto-dashboard dashboard-fill fullcontent quarto-light">
+
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">
+    <a href="#"><img src="images/IMPACT_LOGO.png" alt="IMPACT Logo" class="navbar-logo light-content d-inline-block"></a>
+    <a href="#"><img src="images/IMPACT_LOGO.png" alt="IMPACT Logo" class="navbar-logo dark-content d-inline-block"></a>
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">MSNA 2026</a></div>
+        
+        
+      </div>
+    </div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-niger" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#niger" data-scrolling="false" href="#niger" aria-controls="niger" aria-selected="true"><span class="nav-link-text">NIGER</span></a></li><li class="nav-item" role="presentation"><a id="tab-cameroun" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#cameroun" data-scrolling="false" href="#cameroun" aria-controls="cameroun" aria-selected="false"><span class="nav-link-text">CAMEROUN</span></a></li></ul></div></div>
+</nav>
+</header>
+<div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">  
+
+<style class="bslib-grid-item html-fill-item">
+.small-text {
+  font-size: 12px;
+}
+
+.quarto-dashboard .bslib-value-box .value-box-value {
+    font-size: clamp(.1em, 7cqw, 5em);
+}
+</style>
+<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div id="niger" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="columns" aria-labelledby="tab-niger">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-success showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" data-require-bs-version="5 5" data-full-screen="false">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-clipboard2-check " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z"></path>
+<path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z"></path>
+<path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3Z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">Enquêtes réalisées I Total</p>
+<p class="value-box-value">0/8866 (0%)</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-primary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" data-require-bs-version="5 5" data-full-screen="false">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-person-standing " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM6 6.75v8.5a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v2.75a.75.75 0 0 0 1.5 0v-2.5a.25.25 0 0 1 .5 0Z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">Enquêtes réalisées I Communauté hôte</p>
+<p class="value-box-value">0/3954 (0%)</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-yellow showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" data-require-bs-version="5 5" data-full-screen="false">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-person-walking " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M9.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM6.44 3.752A.75.75 0 0 1 7 3.5h1.445c.742 0 1.32.643 1.243 1.38l-.43 4.083a1.75 1.75 0 0 1-.088.395l-.318.906.213.242a.75.75 0 0 1 .114.175l2 4.25a.75.75 0 1 1-1.357.638l-1.956-4.154-1.68-1.921A.75.75 0 0 1 6 8.96l.138-2.613-.435.489-.464 2.786a.75.75 0 1 1-1.48-.246l.5-3a.75.75 0 0 1 .18-.375l2-2.25Z"></path>
+<path d="M6.25 11.745v-1.418l1.204 1.375.261.524a.75.75 0 0 1-.12.231l-2.5 3.25a.75.75 0 1 1-1.19-.914l2.345-3.048Zm4.22-4.215-.494-.494.205-1.843a1.93 1.93 0 0 0 .006-.067l1.124 1.124h1.44a.75.75 0 0 1 0 1.5H11a.75.75 0 0 1-.531-.22Z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">Enquêtes réalisées I PDI</p>
+<p class="value-box-value">0/2659 (0%)</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-red showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" data-require-bs-version="5 5" data-full-screen="false">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-people " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">Enquêtes réalisées I Réfugiés</p>
+<p class="value-box-value">0/1905 (0%)</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-orange showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" data-require-bs-version="5 5" data-full-screen="false">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-arrow-counterclockwise " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"></path>
+<path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">Enquêtes réalisées I Retournés</p>
+<p class="value-box-value">0/348 (0%)</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="card tabset html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header dashboard-card-no-title bslib-navs-card-title">
+
+<ul class="nav nav-tabs card-header-tabs" role="tablist" data-tabsetid="card-tabset-6"><li class="nav-item" role="presentation"><a href="#card-tabset-6-1" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Etat d'avancement I Admin1" aria-selected="true" class="nav-link active">Etat d'avancement I Admin1</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-6-2" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Etat d'avancement I Admin2" aria-selected="false" class="nav-link">Etat d'avancement I Admin2</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-6-3" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Etat d'avancement I Admin3" aria-selected="false" class="nav-link">Etat d'avancement I Admin3</a></li></ul></div>
+
+
+
+<div class="tab-content html-fill-item html-fill-container" data-tabset-id="card-tabset-6"><div class="tab-pane active show html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-1"><div class="card-body html-fill-item html-fill-container" data-title="Etat d'avancement I Admin1">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-297f39267d1ba9d9d22d" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-297f39267d1ba9d9d22d">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","FixedHeader"],"data":[["NE001","NE002","NE003","NE004","NE005","NE006","NE007","NE008"],["Agadez","Diffa","Dosso","Maradi","Tahoua","Tillabéri","Zinder","Niamey"],[264,336,546,576,690,774,732,36],[0,533,88,184,500,1167,115,72],[122,450,0,211,721,289,43,69],[0,0,107,0,0,214,27,0],[386,1319,741,971,1911,2444,917,177],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"]],"container":"<table class=\"compact small-text\">\n  <thead>\n    <tr>\n      <th>pcode_admin1<\/th>\n      <th>admin1<\/th>\n      <th>enquete_pnd<\/th>\n      <th>enquete_pdi<\/th>\n      <th>enquete_ref<\/th>\n      <th>enquete_ret<\/th>\n      <th>enquete_total<\/th>\n      <th>collecte_com_hote<\/th>\n      <th>collecte_pdi<\/th>\n      <th>collecte_refugie<\/th>\n      <th>collecte_retourne<\/th>\n      <th>collecte_total<\/th>\n      <th>taux_collecte<\/th>\n      <th>etat<\/th>\n      <th>etat_hote<\/th>\n      <th>etat_pdi<\/th>\n      <th>etat_refugie<\/th>\n      <th>etat_retourne<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"Bfrtip","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"autoWidth":true,"fixedHeader":true,"columnDefs":[{"targets":[14,15,16,17],"visible":false},{"className":"dt-right","targets":[2,3,4,5,6,7,8,9,10,11,12]},{"name":"pcode_admin1","targets":0},{"name":"admin1","targets":1},{"name":"enquete_pnd","targets":2},{"name":"enquete_pdi","targets":3},{"name":"enquete_ref","targets":4},{"name":"enquete_ret","targets":5},{"name":"enquete_total","targets":6},{"name":"collecte_com_hote","targets":7},{"name":"collecte_pdi","targets":8},{"name":"collecte_refugie","targets":9},{"name":"collecte_retourne","targets":10},{"name":"collecte_total","targets":11},{"name":"taux_collecte","targets":12},{"name":"etat","targets":13},{"name":"etat_hote","targets":14},{"name":"etat_pdi","targets":15},{"name":"etat_refugie","targets":16},{"name":"etat_retourne","targets":17}],"buttons":[{"extend":"excel","text":"📥 Télécharger Excel","exportOptions":{"columns":":visible"}}],"order":[],"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[13]; $(this.api().cell(row, 11).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[13]; $(this.api().cell(row, 13).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[13]; $(this.api().cell(row, 12).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[14]; $(this.api().cell(row, 7).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[15]; $(this.api().cell(row, 8).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[16]; $(this.api().cell(row, 9).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[17]; $(this.api().cell(row, 10).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-2"><div class="card-body html-fill-item html-fill-container" data-title="Etat d'avancement I Admin2">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-077b4ffa205e933e47cc" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-077b4ffa205e933e47cc">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","FixedHeader"],"data":[["NE001","NE001","NE001","NE001","NE001","NE001","NE002","NE002","NE002","NE002","NE002","NE002","NE003","NE003","NE003","NE003","NE003","NE003","NE003","NE003","NE004","NE004","NE004","NE004","NE004","NE004","NE004","NE004","NE004","NE005","NE005","NE005","NE005","NE005","NE005","NE005","NE005","NE005","NE005","NE005","NE005","NE005","NE006","NE006","NE006","NE006","NE006","NE006","NE006","NE006","NE006","NE006","NE006","NE006","NE006","NE007","NE007","NE007","NE007","NE007","NE007","NE007","NE007","NE007","NE007","NE007","NE008"],["Agadez","Agadez","Agadez","Agadez","Agadez","Agadez","Diffa","Diffa","Diffa","Diffa","Diffa","Diffa","Dosso","Dosso","Dosso","Dosso","Dosso","Dosso","Dosso","Dosso","Maradi","Maradi","Maradi","Maradi","Maradi","Maradi","Maradi","Maradi","Maradi","Tahoua","Tahoua","Tahoua","Tahoua","Tahoua","Tahoua","Tahoua","Tahoua","Tahoua","Tahoua","Tahoua","Tahoua","Tahoua","Tillabéri","Tillabéri","Tillabéri","Tillabéri","Tillabéri","Tillabéri","Tillabéri","Tillabéri","Tillabéri","Tillabéri","Tillabéri","Tillabéri","Tillabéri","Zinder","Zinder","Zinder","Zinder","Zinder","Zinder","Zinder","Zinder","Zinder","Zinder","Zinder","Niamey"],["NE001001","NE001002","NE001003","NE001004","NE001005","NE001006","NE002001","NE002002","NE002003","NE002004","NE002005","NE002006","NE003001","NE003002","NE003003","NE003004","NE003005","NE003006","NE003007","NE003008","NE004001","NE004002","NE004003","NE004004","NE004005","NE004006","NE004008","NE004009","NE004007","NE005001","NE005002","NE005003","NE005004","NE005005","NE005006","NE005007","NE005008","NE005009","NE005010","NE005011","NE005012","NE005013","NE006001","NE006002","NE006003","NE006004","NE006005","NE006006","NE006007","NE006008","NE006009","NE006010","NE006011","NE006012","NE006013","NE007001","NE007002","NE007003","NE007004","NE007005","NE007006","NE007007","NE007008","NE007009","NE007010","NE007011","NE008001"],["Aderbissinat","Arlit","Bilma","Iferouane","Ingall","Tchirozerine","Bosso","Diffa","Goudoumaria","Maïné Soroa","N'Gourti","N'Guigmi","Boboye","Dioundiou","Dogondoutchi","Dosso","Falmey","Gaya","Loga","Tibiri","Aguié","Bermo","Dakoro","Gazaoua","Guidan Roumdji","Madarounfa","Mayahi","Tessaoua","Ville de Maradi","Abalak","Bagaroua","Birni N'Konni","Bouza","Illéla","Keita","Madaoua","Malbaza","Tahoua","Tassara","Tchintabaraden","Tillia","Ville de Tahoua","Abala","Ayerou","Balleyara","Banibangou","Bankilaré","Filingué","Gothèye","Kollo","Ouallam","Say","Téra","Tillabéri","Torodi","Belbedji","Damagaram Takaya","Dungass","Gouré","Kantché","Magaria","Mirriah","Takeita","Tanout","Tesker","Ville de Zinder","Ville de Niamey"],[36,36,84,36,36,36,78,36,36,72,36,78,72,36,72,108,36,36,108,78,36,72,144,36,36,72,72,72,36,36,36,36,108,72,36,72,36,108,36,36,42,36,36,36,36,36,36,36,78,72,36,72,150,114,36,36,36,36,108,72,72,72,72,108,42,78,36],[0,0,0,0,0,0,140,75,22,121,28,147,0,0,0,0,29,59,0,0,0,0,0,0,73,111,0,0,0,0,72,0,0,0,0,72,0,71,70,73,74,68,74,74,71,73,68,73,146,35,73,135,74,196,75,0,51,0,0,0,0,64,0,0,0,0,72],[0,0,0,0,69,53,142,75,30,70,0,133,0,0,0,0,0,0,0,0,0,0,0,0,75,136,0,0,0,0,37,69,0,129,0,144,0,58,73,74,75,62,74,73,0,0,0,41,0,30,71,0,0,0,0,0,0,0,15,28,0,0,0,0,0,0,69],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50,57,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,73,0,0,72,0,0,0,0,0,0,69,0,0,27,0,0,0,0,0,0,0,0,0,0],[36,36,84,36,105,89,360,186,88,263,64,358,72,36,72,108,115,152,108,78,36,72,144,36,184,319,72,72,36,36,145,105,108,201,36,288,36,237,179,183,191,166,184,256,107,109,176,150,224,137,180,207,224,379,111,36,114,36,123,100,72,136,72,108,42,78,177],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"]],"container":"<table class=\"compact small-text\">\n  <thead>\n    <tr>\n      <th>pcode_admin1<\/th>\n      <th>admin1<\/th>\n      <th>pcode_admin2<\/th>\n      <th>admin2<\/th>\n      <th>enquete_pnd<\/th>\n      <th>enquete_pdi<\/th>\n      <th>enquete_ref<\/th>\n      <th>enquete_ret<\/th>\n      <th>enquete_total<\/th>\n      <th>collecte_com_hote<\/th>\n      <th>collecte_pdi<\/th>\n      <th>collecte_refugie<\/th>\n      <th>collecte_retourne<\/th>\n      <th>collecte_total<\/th>\n      <th>taux_collecte<\/th>\n      <th>etat<\/th>\n      <th>etat_hote<\/th>\n      <th>etat_pdi<\/th>\n      <th>etat_refugie<\/th>\n      <th>etat_retourne<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"Bfrtip","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"autoWidth":true,"fixedHeader":true,"columnDefs":[{"targets":[16,17,18,19],"visible":false},{"className":"dt-right","targets":[4,5,6,7,8,9,10,11,12,13,14]},{"name":"pcode_admin1","targets":0},{"name":"admin1","targets":1},{"name":"pcode_admin2","targets":2},{"name":"admin2","targets":3},{"name":"enquete_pnd","targets":4},{"name":"enquete_pdi","targets":5},{"name":"enquete_ref","targets":6},{"name":"enquete_ret","targets":7},{"name":"enquete_total","targets":8},{"name":"collecte_com_hote","targets":9},{"name":"collecte_pdi","targets":10},{"name":"collecte_refugie","targets":11},{"name":"collecte_retourne","targets":12},{"name":"collecte_total","targets":13},{"name":"taux_collecte","targets":14},{"name":"etat","targets":15},{"name":"etat_hote","targets":16},{"name":"etat_pdi","targets":17},{"name":"etat_refugie","targets":18},{"name":"etat_retourne","targets":19}],"buttons":[{"extend":"excel","text":"📥 Télécharger Excel","exportOptions":{"columns":":visible"}}],"order":[],"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[15]; $(this.api().cell(row, 13).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[15]; $(this.api().cell(row, 15).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[15]; $(this.api().cell(row, 14).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[16]; $(this.api().cell(row, 9).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[17]; $(this.api().cell(row, 10).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[18]; $(this.api().cell(row, 11).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[19]; $(this.api().cell(row, 12).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-6-3"><div class="card-body html-fill-item html-fill-container" data-title="Etat d'avancement I Admin3">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-f649157075cee0483298" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-f649157075cee0483298">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","FixedHeader"],"data":[["NE006","NE005","NE001","NE004","NE005","NE001","NE004","NE005","NE005","NE006","NE001","NE004","NE006","NE004","NE005","NE005","NE005","NE004","NE005","NE005","NE003","NE005","NE006","NE006","NE005","NE004","NE006","NE001","NE003","NE005","NE006","NE002","NE007","NE005","NE004","NE002","NE004","NE007","NE007","NE007","NE004","NE003","NE001","NE007","NE006","NE005","NE006","NE006","NE006","NE002","NE003","NE001","NE004","NE003","NE003","NE005","NE003","NE003","NE007","NE007","NE007","NE003","NE001","NE003","NE007","NE003","NE003","NE003","NE006","NE002","NE004","NE004","NE007","NE005","NE007","NE004","NE007","NE007","NE003","NE003","NE004","NE003","NE006","NE006","NE007","NE002","NE007","NE007","NE003","NE002","NE004","NE004","NE004","NE007","NE003","NE006","NE007","NE004","NE005","NE001","NE005","NE006","NE006","NE001","NE002","NE005","NE007","NE005","NE003","NE003","NE006","NE005","NE007","NE003","NE006","NE004","NE004","NE004","NE006","NE006","NE006","NE003","NE003","NE005","NE004","NE007","NE002","NE004","NE006","NE007","NE005","NE004","NE004","NE004","NE007","NE003","NE004","NE007","NE006","NE007","NE007","NE003","NE006","NE003","NE002","NE002","NE002","NE006","NE008","NE008","NE008","NE008","NE008","NE007","NE006","NE004","NE005","NE006","NE005","NE004","NE004","NE004","NE006","NE006","NE004","NE004","NE007","NE006","NE006","NE006","NE003","NE003","NE006","NE004","NE005","NE005","NE005","NE005","NE005","NE006","NE003","NE007","NE007","NE005","NE004","NE004","NE005","NE001","NE005","NE007","NE006","NE007","NE003","NE004","NE003","NE004","NE006","NE005","NE001","NE007","NE003","NE003","NE006","NE006","NE006","NE002","NE003","NE005","NE007","NE007","NE007","NE003","NE003","NE007","NE007","NE007","NE007","NE007"],["Tillabéri","Tahoua","Agadez","Maradi","Tahoua","Agadez","Maradi","Tahoua","Tahoua","Tillabéri","Agadez","Maradi","Tillabéri","Maradi","Tahoua","Tahoua","Tahoua","Maradi","Tahoua","Tahoua","Dosso","Tahoua","Tillabéri","Tillabéri","Tahoua","Maradi","Tillabéri","Agadez","Dosso","Tahoua","Tillabéri","Diffa","Zinder","Tahoua","Maradi","Diffa","Maradi","Zinder","Zinder","Zinder","Maradi","Dosso","Agadez","Zinder","Tillabéri","Tahoua","Tillabéri","Tillabéri","Tillabéri","Diffa","Dosso","Agadez","Maradi","Dosso","Dosso","Tahoua","Dosso","Dosso","Zinder","Zinder","Zinder","Dosso","Agadez","Dosso","Zinder","Dosso","Dosso","Dosso","Tillabéri","Diffa","Maradi","Maradi","Zinder","Tahoua","Zinder","Maradi","Zinder","Zinder","Dosso","Dosso","Maradi","Dosso","Tillabéri","Tillabéri","Zinder","Diffa","Zinder","Zinder","Dosso","Diffa","Maradi","Maradi","Maradi","Zinder","Dosso","Tillabéri","Zinder","Maradi","Tahoua","Agadez","Tahoua","Tillabéri","Tillabéri","Agadez","Diffa","Tahoua","Zinder","Tahoua","Dosso","Dosso","Tillabéri","Tahoua","Zinder","Dosso","Tillabéri","Maradi","Maradi","Maradi","Tillabéri","Tillabéri","Tillabéri","Dosso","Dosso","Tahoua","Maradi","Zinder","Diffa","Maradi","Tillabéri","Zinder","Tahoua","Maradi","Maradi","Maradi","Zinder","Dosso","Maradi","Zinder","Tillabéri","Zinder","Zinder","Dosso","Tillabéri","Dosso","Diffa","Diffa","Diffa","Tillabéri","Niamey","Niamey","Niamey","Niamey","Niamey","Zinder","Tillabéri","Maradi","Tahoua","Tillabéri","Tahoua","Maradi","Maradi","Maradi","Tillabéri","Tillabéri","Maradi","Maradi","Zinder","Tillabéri","Tillabéri","Tillabéri","Dosso","Dosso","Tillabéri","Maradi","Tahoua","Tahoua","Tahoua","Tahoua","Tahoua","Tillabéri","Dosso","Zinder","Zinder","Tahoua","Maradi","Maradi","Tahoua","Agadez","Tahoua","Zinder","Tillabéri","Zinder","Dosso","Maradi","Dosso","Maradi","Tillabéri","Tahoua","Agadez","Zinder","Dosso","Dosso","Tillabéri","Tillabéri","Tillabéri","Diffa","Dosso","Tahoua","Zinder","Zinder","Zinder","Dosso","Dosso","Zinder","Zinder","Zinder","Zinder","Zinder"],["NE006001","NE005001","NE001001","NE004003","NE005009","NE001006","NE004001","NE005004","NE005003","NE006012","NE001002","NE004008","NE006002","NE004003","NE005001","NE005004","NE005005","NE004003","NE005002","NE005009","NE003006","NE005007","NE006004","NE006005","NE005003","NE004002","NE006012","NE001003","NE003001","NE005003","NE006008","NE002001","NE007004","NE005004","NE004005","NE002002","NE004003","NE007008","NE007002","NE007005","NE004006","NE003003","NE001002","NE007005","NE006007","NE005004","NE006012","NE006011","NE006008","NE002002","NE003002","NE001003","NE004006","NE003003","NE003003","NE005008","NE003004","NE003008","NE007005","NE007007","NE007003","NE003001","NE001003","NE003001","NE007009","NE003005","NE003007","NE003004","NE006006","NE002004","NE004006","NE004002","NE007007","NE005007","NE007004","NE004004","NE007009","NE007008","NE003004","NE003006","NE004004","NE003004","NE006011","NE006007","NE007003","NE002003","NE007007","NE007004","NE003008","NE002002","NE004008","NE004005","NE004005","NE007004","NE003005","NE006008","NE007007","NE004009","NE005006","NE001004","NE005005","NE006006","NE006002","NE001005","NE002006","NE005009","NE007005","NE005011","NE003002","NE003004","NE006008","NE005004","NE007004","NE003003","NE006011","NE004003","NE004009","NE004003","NE006008","NE006006","NE006012","NE003001","NE003007","NE005007","NE004006","NE007006","NE002004","NE004003","NE006013","NE007003","NE005008","NE004007","NE004007","NE004007","NE007005","NE003003","NE004008","NE007002","NE006011","NE007007","NE007002","NE003004","NE006008","NE003001","NE002005","NE002004","NE002006","NE006008","NE008001","NE008001","NE008001","NE008001","NE008001","NE007009","NE006009","NE004009","NE005007","NE006010","NE005007","NE004003","NE004005","NE004006","NE006012","NE006001","NE004008","NE004006","NE007006","NE006010","NE006009","NE006012","NE003007","NE003003","NE006003","NE004003","NE005013","NE005013","NE005005","NE005009","NE005006","NE006010","NE003006","NE007009","NE007001","NE005010","NE004001","NE004008","NE005011","NE001006","NE005009","NE007009","NE006011","NE007010","NE003004","NE004009","NE003008","NE004005","NE006012","NE005012","NE001004","NE007008","NE003004","NE003004","NE006006","NE006009","NE006013","NE002001","NE003006","NE005003","NE007002","NE007005","NE007006","NE003006","NE003002","NE007007","NE007011","NE007011","NE007011","NE007011"],["Abala","Abalak","Aderbissinat","Dakoro","Tahoua","Tchirozerine","Aguié","Bouza","Birni N'Konni","Tillabéri","Arlit","Mayahi","Ayerou","Dakoro","Abalak","Bouza","Illéla","Dakoro","Bagaroua","Tahoua","Gaya","Madaoua","Banibangou","Bankilaré","Birni N'Konni","Bermo","Tillabéri","Bilma","Boboye","Birni N'Konni","Kollo","Bosso","Gouré","Bouza","Guidan Roumdji","Diffa","Dakoro","Takeita","Damagaram Takaya","Kantché","Madarounfa","Dogondoutchi","Arlit","Kantché","Gothèye","Bouza","Tillabéri","Téra","Kollo","Diffa","Dioundiou","Bilma","Madarounfa","Dogondoutchi","Dogondoutchi","Malbaza","Dosso","Tibiri","Kantché","Mirriah","Dungass","Boboye","Bilma","Boboye","Tanout","Falmey","Loga","Dosso","Filingué","Maïné Soroa","Madarounfa","Bermo","Mirriah","Madaoua","Gouré","Gazaoua","Tanout","Takeita","Dosso","Gaya","Gazaoua","Dosso","Téra","Gothèye","Dungass","Goudoumaria","Mirriah","Gouré","Tibiri","Diffa","Mayahi","Guidan Roumdji","Guidan Roumdji","Gouré","Falmey","Kollo","Mirriah","Tessaoua","Keita","Iferouane","Illéla","Filingué","Ayerou","Ingall","N'Guigmi","Tahoua","Kantché","Tchintabaraden","Dioundiou","Dosso","Kollo","Bouza","Gouré","Dogondoutchi","Téra","Dakoro","Tessaoua","Dakoro","Kollo","Filingué","Tillabéri","Boboye","Loga","Madaoua","Madarounfa","Magaria","Maïné Soroa","Dakoro","Torodi","Dungass","Malbaza","Ville de Maradi","Ville de Maradi","Ville de Maradi","Kantché","Dogondoutchi","Mayahi","Damagaram Takaya","Téra","Mirriah","Damagaram Takaya","Dosso","Kollo","Boboye","N'Gourti","Maïné Soroa","N'Guigmi","Kollo","Ville de Niamey","Ville de Niamey","Ville de Niamey","Ville de Niamey","Ville de Niamey","Tanout","Ouallam","Tessaoua","Madaoua","Say","Madaoua","Dakoro","Guidan Roumdji","Madarounfa","Tillabéri","Abala","Mayahi","Madarounfa","Magaria","Say","Ouallam","Tillabéri","Loga","Dogondoutchi","Balleyara","Dakoro","Ville de Tahoua","Ville de Tahoua","Illéla","Tahoua","Keita","Say","Gaya","Tanout","Belbedji","Tassara","Aguié","Mayahi","Tchintabaraden","Tchirozerine","Tahoua","Tanout","Téra","Tesker","Dosso","Tessaoua","Tibiri","Guidan Roumdji","Tillabéri","Tillia","Iferouane","Takeita","Dosso","Dosso","Filingué","Ouallam","Torodi","Bosso","Gaya","Birni N'Konni","Damagaram Takaya","Kantché","Magaria","Gaya","Dioundiou","Mirriah","Ville de Zinder","Ville de Zinder","Ville de Zinder","Ville de Zinder"],["NE006001001","NE005001001","NE001001001","NE004003001","NE005009001","NE001006001","NE004001001","NE005004001","NE005003001","NE006012001","NE001002001","NE004008001","NE006002001","NE004003002","NE005001003","NE005004002","NE005005001","NE004003003","NE005002001","NE005009002","NE003006001","NE005007002","NE006004001","NE006005001","NE005003002","NE004002001","NE006012002","NE001003001","NE003001001","NE005003003","NE006008001","NE002001001","NE007004002","NE005004003","NE004005001","NE002002001","NE004003005","NE007008001","NE007002002","NE007005001","NE004006001","NE003003001","NE001002002","NE007005002","NE006007001","NE005004004","NE006012003","NE006011001","NE006008002","NE002002002","NE003002001","NE001003002","NE004006002","NE003003002","NE003003003","NE005008001","NE003004001","NE003008001","NE007005003","NE007007002","NE007003002","NE003001002","NE001003004","NE003001003","NE007009001","NE003005001","NE003007001","NE003004002","NE006006001","NE002004001","NE004006003","NE004002002","NE007007003","NE005007003","NE007004003","NE004004001","NE007009002","NE007008002","NE003004003","NE003006003","NE004004002","NE003004004","NE006011002","NE006007002","NE007003003","NE002003001","NE007007004","NE007004004","NE003008002","NE002002003","NE004008003","NE004005002","NE004005003","NE007004005","NE003005002","NE006008003","NE007007005","NE004009002","NE005006002","NE001004001","NE005005002","NE006006002","NE006002002","NE001005001","NE002006001","NE005009004","NE007005005","NE005011001","NE003002002","NE003004006","NE006008004","NE005004005","NE007004006","NE003003004","NE006011003","NE004003007","NE004009004","NE004003008","NE006008007","NE006006003","NE006012004","NE003001007","NE003007002","NE005007004","NE004006004","NE007006004","NE002004002","NE004003009","NE006013001","NE007003004","NE005008002","NE004007001","NE004007002","NE004007003","NE007005007","NE003003005","NE004008006","NE007002004","NE006011004","NE007007007","NE007002005","NE003004007","NE006008009","NE003001008","NE002005001","NE002004003","NE002006002","NE006008010","NE008001001","NE008001002","NE008001003","NE008001004","NE008001005","NE007009003","NE006009002","NE004009006","NE005007005","NE006010001","NE005007006","NE004003011","NE004005004","NE004006005","NE006012005","NE006001002","NE004008007","NE004006006","NE007006005","NE006010002","NE006009003","NE006012006","NE003007003","NE003003006","NE006003001","NE004003012","NE005013001","NE005013002","NE005005003","NE005009005","NE005006004","NE006010003","NE003006004","NE007009004","NE007001001","NE005010001","NE004001002","NE004008008","NE005011002","NE001006004","NE005009006","NE007009005","NE006011005","NE007010001","NE003004009","NE004009007","NE003008004","NE004005005","NE006012007","NE005012001","NE001004002","NE007008003","NE003004010","NE003004011","NE006006004","NE006009004","NE006013002","NE002001002","NE003006005","NE005003004","NE007002006","NE007005009","NE007006007","NE003006006","NE003002003","NE007007008","NE007011001","NE007011002","NE007011003","NE007011004"],["Abala","Abalak","Aderbissinat","Adjekoria","Affala","Agadez","Aguié","Allakaye","Alléla","Anzourou","Arlit","Attantane","Ayerou","Azagor","Azeye","Babankatami","Badaguichiri","Bader Goula","Bagaroua","Bambeye","Bana","Bangui","Banibangou","Bankilaré","Bazaga","Bermo","Bibiyergou","Bilma","Birni N'Gaouré","Birni N'Konni","Bitinkodji","Bosso","Bouné","Bouza","Chadakori","Chetimari","Dakoro","Dakoussa","Damagaram Takaya","Dan Barto","Dan-Issa","Dan-Kassari","Dannet","Daouché","Dargol","Déoulé","Dessa","Diagourou","Diantchandou","Diffa","Dioundiou","Dirkou","Djiratawa","Dogondoutchi","Dogonkiria","Doguerawa","Dosso","Doumega","Doungou","Droum","Dungass","Fabidji","Fachi","Fakara","Falenko","Falmey","Falwel","Farey","Filingué","Foulatari","Gabi","Gadabedji","Gaffati","Galma Koudawatché","Gamou","Gangara","Gangara","Garagoumsa","Garankédey","Gaya","Gazaoua","Gollé","Gorouol","Gothèye","Gouchi","Goudoumaria","Gouna","Gouré","Guéchémé","Gueskérou","Guidan Amoumoune","Guidan Roumdji","Guidan Sori","Guidiguir","Guilladjé","Hamdallaye","Hamdara","Hawandawaki","Ibohamane","Iferouane","Illéla","Imanan","Inatès","Ingall","Kablewa","Kalfou","Kantché","Kao","Karakara","Karguibangou","Karma","Karofane","Kellé","Kiéché","Kokorou","Korahane","Korgom","Kornaka","Kouré","Kourfeye Centre","Kourteye","Koygolo","Loga","Madaoua","Madarounfa","Magaria","Maïné Soroa","Maïyara","Makalondi","Malawa","Malbaza","Maradi I","Maradi II","Maradi III","Matamey","Matankari","Mayahi","Mazamni","Méhana","Mirriah","Moa","Mokko","N'Dounga","N'Gonga","N'Gourti","N'Guelbely","N'Guigmi","Namaro","Niamey I","Niamey II","Niamey III","Niamey IV","Niamey V","Olléléwa","Ouallam","Ourafane","Ourno","Ouro Guéladjo","Sabon Guida","Sabon Machi","Saé Saboua","Safo","Sakoïra","Sanam","Sarkin Haoussa","Sarkin Yamma","Sassoumbroum","Say","Simiri","Sinder","Sokorbé","Soucoucoutane","Tagazar","Tagriss","Tahoua I","Tahoua II","Tajaé","Takanamat","Tamaské","Tamou","Tanda","Tanout","Tarka","Tassara","Tchadoua","Tchaké","Tchintabaraden","Tchirozerine","Tebaram","Tenhya","Téra","Tesker","Tessa","Tessaoua","Tibiri","Tibiri","Tillabéri","Tillia","Timia","Tirmini","Tombokoirey I","Tombokoirey II","Tondikandia","Tondikiwindi","Torodi","Toumour","Tounouga","Tsernaoua","Wamé","Yaouri","Yékoua","Yélou","Zabori","Zermou","Zinder I","Zinder II","Zinder III","Zinder IV"],[6,24,36,6,36,18,12,12,6,42,24,18,18,6,12,36,24,30,36,24,6,12,36,36,0,36,0,6,12,12,0,36,6,30,6,6,6,18,12,36,18,12,12,6,42,6,36,24,18,12,24,36,18,12,6,24,12,42,6,12,12,6,42,36,6,30,36,18,18,24,12,36,6,6,12,24,18,36,30,0,12,6,36,36,12,36,6,24,18,18,12,0,6,30,6,12,18,6,12,6,36,0,18,36,36,24,18,18,6,12,6,24,36,12,36,6,12,18,12,6,12,6,36,30,0,30,36,18,6,12,12,12,6,18,0,18,12,6,42,18,6,6,18,12,36,12,42,6,12,6,12,6,0,30,18,36,18,36,6,18,12,18,0,30,24,6,36,30,6,18,36,12,36,36,24,12,12,12,24,6,6,18,36,36,24,6,18,18,12,36,12,42,6,18,18,12,6,42,30,18,6,12,12,12,30,42,18,18,12,6,6,6,6,12,12,12,42,12],[69,0,0,0,0,0,0,0,0,53,0,0,74,0,0,0,0,0,72,0,0,72,73,68,0,0,12,0,0,0,23,71,0,0,0,12,0,0,0,0,39,0,0,0,73,0,61,0,0,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,0,0,73,42,48,0,41,0,0,0,0,0,0,39,0,0,0,73,0,22,0,0,0,7,0,22,28,0,0,0,23,0,0,0,0,0,0,0,73,0,0,0,0,0,12,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,73,0,34,0,0,0,0,0,0,0,0,51,0,0,0,0,0,0,28,6,74,0,7,5,0,1,59,0,40,0,0,72,0,0,0,7,49,5,0,17,0,16,0,0,0,0,71,0,23,45,0,71,0,47,2,0,0,70,0,0,73,0,0,0,74,0,0,0,0,23,21,74,0,0,0,0,0,33,41,69,18,0,0,0,0,0,0,0,0,0,0,0],[74,0,0,0,0,53,0,0,2,0,0,0,73,0,0,0,48,0,37,0,0,74,0,0,52,0,0,0,0,15,0,69,0,0,3,43,0,0,0,10,64,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,30,0,15,0,6,0,29,0,0,0,30,0,0,0,0,69,41,0,69,61,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,50,0,70,0,0,0,0,0,0,0,18,0,0,0,0,0,0,0,0,0,0,0,72,0,24,24,10,4,7,0,44,0,0,0,60,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,101,19,12,0,0,0,0,0,0,73,0,0,74,0,0,0,0,0,0,0,0,43,0,75,0,0,0,0,0,27,0,73,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,73,0,0,0,0,0,0,0,0,0,0,72,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,69,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,50,0,0,0,0,0,0,0,0,0,0,0,0,0,31,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,26,0,0,0,0,0,0,0,0,0,0,0],[149,24,36,6,36,71,12,12,8,95,24,18,238,6,12,36,72,30,145,24,6,158,109,176,52,36,12,6,12,27,23,176,6,30,9,61,6,18,12,46,121,12,12,6,115,6,166,24,18,94,24,36,18,12,6,24,12,42,6,12,12,6,42,36,6,109,36,18,91,66,82,36,47,6,12,24,18,36,30,70,12,6,36,109,12,88,6,39,18,31,12,51,34,30,6,42,41,6,12,6,105,41,18,105,170,24,18,18,6,12,18,24,36,12,36,6,12,18,12,6,12,6,36,40,50,30,179,18,40,12,12,12,6,18,18,18,12,84,42,18,6,6,18,12,64,18,188,6,43,35,22,11,66,30,102,36,18,108,66,18,12,25,49,35,24,23,36,46,6,18,36,12,107,36,148,76,24,83,24,53,8,18,36,179,24,6,165,18,12,36,86,42,6,18,18,78,27,191,30,18,6,12,12,72,71,184,62,18,12,6,6,6,6,12,12,12,42,12],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"]],"container":"<table class=\"compact small-text\">\n  <thead>\n    <tr>\n      <th>pcode_admin1<\/th>\n      <th>admin1<\/th>\n      <th>pcode_admin2<\/th>\n      <th>admin2<\/th>\n      <th>pcode_admin3<\/th>\n      <th>admin3<\/th>\n      <th>enquete_pnd<\/th>\n      <th>enquete_pdi<\/th>\n      <th>enquete_ref<\/th>\n      <th>enquete_ret<\/th>\n      <th>enquete_total<\/th>\n      <th>collecte_com_hote<\/th>\n      <th>collecte_pdi<\/th>\n      <th>collecte_refugie<\/th>\n      <th>collecte_retourne<\/th>\n      <th>collecte_total<\/th>\n      <th>taux_collecte<\/th>\n      <th>etat<\/th>\n      <th>etat_hote<\/th>\n      <th>etat_pdi<\/th>\n      <th>etat_refugie<\/th>\n      <th>etat_retourne<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"Bfrtip","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"autoWidth":true,"fixedHeader":true,"columnDefs":[{"targets":[18,19,20,21],"visible":false},{"className":"dt-right","targets":[6,7,8,9,10,11,12,13,14,15,16]},{"name":"pcode_admin1","targets":0},{"name":"admin1","targets":1},{"name":"pcode_admin2","targets":2},{"name":"admin2","targets":3},{"name":"pcode_admin3","targets":4},{"name":"admin3","targets":5},{"name":"enquete_pnd","targets":6},{"name":"enquete_pdi","targets":7},{"name":"enquete_ref","targets":8},{"name":"enquete_ret","targets":9},{"name":"enquete_total","targets":10},{"name":"collecte_com_hote","targets":11},{"name":"collecte_pdi","targets":12},{"name":"collecte_refugie","targets":13},{"name":"collecte_retourne","targets":14},{"name":"collecte_total","targets":15},{"name":"taux_collecte","targets":16},{"name":"etat","targets":17},{"name":"etat_hote","targets":18},{"name":"etat_pdi","targets":19},{"name":"etat_refugie","targets":20},{"name":"etat_retourne","targets":21}],"buttons":[{"extend":"excel","text":"📥 Télécharger Excel","exportOptions":{"columns":":visible"}}],"order":[],"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[17]; $(this.api().cell(row, 15).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[17]; $(this.api().cell(row, 17).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[17]; $(this.api().cell(row, 16).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[18]; $(this.api().cell(row, 11).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[19]; $(this.api().cell(row, 12).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[20]; $(this.api().cell(row, 13).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[21]; $(this.api().cell(row, 14).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+</div></div></div><bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div><div id="cameroun" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="columns" aria-labelledby="tab-cameroun">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-success showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" data-require-bs-version="5 5" data-full-screen="false">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-clipboard2-check " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z"></path>
+<path d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z"></path>
+<path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3Z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">Enquêtes réalisées I Total</p>
+<p class="value-box-value">0/22096 (0%)</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-primary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" data-require-bs-version="5 5" data-full-screen="false">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-person-standing " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM6 6.75v8.5a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v2.75a.75.75 0 0 0 1.5 0v-2.5a.25.25 0 0 1 .5 0Z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">Enquêtes réalisées I Communauté hôte</p>
+<p class="value-box-value">0/10879 (0%)</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-yellow showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" data-require-bs-version="5 5" data-full-screen="false">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-person-walking " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M9.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM6.44 3.752A.75.75 0 0 1 7 3.5h1.445c.742 0 1.32.643 1.243 1.38l-.43 4.083a1.75 1.75 0 0 1-.088.395l-.318.906.213.242a.75.75 0 0 1 .114.175l2 4.25a.75.75 0 1 1-1.357.638l-1.956-4.154-1.68-1.921A.75.75 0 0 1 6 8.96l.138-2.613-.435.489-.464 2.786a.75.75 0 1 1-1.48-.246l.5-3a.75.75 0 0 1 .18-.375l2-2.25Z"></path>
+<path d="M6.25 11.745v-1.418l1.204 1.375.261.524a.75.75 0 0 1-.12.231l-2.5 3.25a.75.75 0 1 1-1.19-.914l2.345-3.048Zm4.22-4.215-.494-.494.205-1.843a1.93 1.93 0 0 0 .006-.067l1.124 1.124h1.44a.75.75 0 0 1 0 1.5H11a.75.75 0 0 1-.531-.22Z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">Enquêtes réalisées I PDI</p>
+<p class="value-box-value">0/5398 (0%)</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-red showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" data-require-bs-version="5 5" data-full-screen="false">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-people " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">Enquêtes réalisées I Réfugiés</p>
+<p class="value-box-value">0/634 (0%)</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card bslib-card bslib-mb-spacing html-fill-item html-fill-container bslib-value-box bg-orange showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()" data-require-bs-version="5 5" data-full-screen="false">
+<div class="card-body bslib-gap-spacing html-fill-item html-fill-container" style="margin-top:auto;margin-bottom:auto;flex:1 1 auto; padding:0;">
+<div class="value-box-grid html-fill-item" style="--bslib-grid-height:auto;--bslib-grid-height-mobile:auto;---bslib-value-box-showcase-w:30%;---bslib-value-box-showcase-w-fs:1fr;---bslib-value-box-showcase-max-h:100px;---bslib-value-box-showcase-max-h-fs:67%;">
+<div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-arrow-counterclockwise " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"></path>
+<path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"></path></svg></div>
+<div class="value-box-area html-fill-item html-fill-container">
+<p class="value-box-title">Enquêtes réalisées I Retournés</p>
+<p class="value-box-value">0/5185 (0%)</p>
+</div>
+</div>
+</div>
+<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="card tabset html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-header dashboard-card-no-title bslib-navs-card-title">
+
+<ul class="nav nav-tabs card-header-tabs" role="tablist" data-tabsetid="card-tabset-12"><li class="nav-item" role="presentation"><a href="#card-tabset-12-1" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Etat d'avancement I Admin1" aria-selected="true" class="nav-link active">Etat d'avancement I Admin1</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-12-2" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Etat d'avancement I Admin2" aria-selected="false" class="nav-link">Etat d'avancement I Admin2</a></li><li class="nav-item" role="presentation"><a href="#card-tabset-12-3" role="tab" data-toggle="tab" data-bs-toggle="tab" data-value="Etat d'avancement I Admin3" aria-selected="false" class="nav-link">Etat d'avancement I Admin3</a></li></ul></div>
+
+
+
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+
+</div>
+<div class="tab-content html-fill-item html-fill-container" data-tabset-id="card-tabset-12"><div class="tab-pane active show html-fill-item html-fill-container" role="tabpanel" id="card-tabset-12-1"><div class="card-body html-fill-item html-fill-container" data-title="Etat d'avancement I Admin1">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-2535df0880c219493881" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-2535df0880c219493881">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","FixedHeader"],"data":[["CM004","CM007","CM010"],["Extrême-Nord","Nord-Ouest","Sud-Ouest"],[4705,3400,2774],[1964,1949,1485],[585,0,49],[1599,2135,1451],[8853,7484,5759],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0],["Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré"]],"container":"<table class=\"compact small-text\">\n  <thead>\n    <tr>\n      <th>pcode_admin1<\/th>\n      <th>admin1<\/th>\n      <th>enquete_pnd<\/th>\n      <th>enquete_pdi<\/th>\n      <th>enquete_ref<\/th>\n      <th>enquete_ret<\/th>\n      <th>enquete_total<\/th>\n      <th>collecte_com_hote<\/th>\n      <th>collecte_pdi<\/th>\n      <th>collecte_refugie<\/th>\n      <th>collecte_retourne<\/th>\n      <th>collecte_total<\/th>\n      <th>taux_collecte<\/th>\n      <th>etat<\/th>\n      <th>etat_hote<\/th>\n      <th>etat_pdi<\/th>\n      <th>etat_refugie<\/th>\n      <th>etat_retourne<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"Bfrtip","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"autoWidth":true,"fixedHeader":true,"columnDefs":[{"targets":[14,15,16,17],"visible":false},{"className":"dt-right","targets":[2,3,4,5,6,7,8,9,10,11,12]},{"name":"pcode_admin1","targets":0},{"name":"admin1","targets":1},{"name":"enquete_pnd","targets":2},{"name":"enquete_pdi","targets":3},{"name":"enquete_ref","targets":4},{"name":"enquete_ret","targets":5},{"name":"enquete_total","targets":6},{"name":"collecte_com_hote","targets":7},{"name":"collecte_pdi","targets":8},{"name":"collecte_refugie","targets":9},{"name":"collecte_retourne","targets":10},{"name":"collecte_total","targets":11},{"name":"taux_collecte","targets":12},{"name":"etat","targets":13},{"name":"etat_hote","targets":14},{"name":"etat_pdi","targets":15},{"name":"etat_refugie","targets":16},{"name":"etat_retourne","targets":17}],"buttons":[{"extend":"excel","text":"📥 Télécharger Excel","exportOptions":{"columns":":visible"}}],"order":[],"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[13]; $(this.api().cell(row, 11).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[13]; $(this.api().cell(row, 13).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[13]; $(this.api().cell(row, 12).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[14]; $(this.api().cell(row, 7).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[15]; $(this.api().cell(row, 8).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[16]; $(this.api().cell(row, 9).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[17]; $(this.api().cell(row, 10).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-12-2"><div class="card-body html-fill-item html-fill-container" data-title="Etat d'avancement I Admin2">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-0a935dda12cf946a1a7b" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-0a935dda12cf946a1a7b">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","FixedHeader"],"data":[["CM004","CM004","CM004","CM004","CM004","CM004","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM010","CM010","CM010","CM010","CM010","CM010"],["Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest"],["CM004001","CM004002","CM004003","CM004004","CM004005","CM004006","CM007001","CM007002","CM007003","CM007004","CM007005","CM007006","CM007007","CM010001","CM010002","CM010003","CM010004","CM010005","CM010006"],["Diamaré","Logone-et-Chari","Mayo-Danay","Mayo-Kani","Mayo-Sava","Mayo-Tsanaga","Boyo","Bui","Donga-Mantung","Menchum","Mezam","Momo","Ngo-Ketunjia","Fako","Kupe-Manenguba","Lebialem","Manyu","Meme","Ndian"],[920,1014,1115,685,295,676,385,595,505,400,730,495,290,780,295,300,369,495,535],[303,650,329,125,221,336,241,404,341,259,188,309,207,337,134,129,277,353,255],[0,330,0,0,72,183,0,0,0,0,0,0,0,0,0,0,49,0,0],[0,460,725,0,148,266,275,417,354,292,256,333,208,214,217,189,282,344,205],[1223,2454,2169,810,736,1461,901,1416,1200,951,1174,1137,705,1331,646,618,977,1192,995],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"]],"container":"<table class=\"compact small-text\">\n  <thead>\n    <tr>\n      <th>pcode_admin1<\/th>\n      <th>admin1<\/th>\n      <th>pcode_admin2<\/th>\n      <th>admin2<\/th>\n      <th>enquete_pnd<\/th>\n      <th>enquete_pdi<\/th>\n      <th>enquete_ref<\/th>\n      <th>enquete_ret<\/th>\n      <th>enquete_total<\/th>\n      <th>collecte_com_hote<\/th>\n      <th>collecte_pdi<\/th>\n      <th>collecte_refugie<\/th>\n      <th>collecte_retourne<\/th>\n      <th>collecte_total<\/th>\n      <th>taux_collecte<\/th>\n      <th>etat<\/th>\n      <th>etat_hote<\/th>\n      <th>etat_pdi<\/th>\n      <th>etat_refugie<\/th>\n      <th>etat_retourne<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"Bfrtip","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"autoWidth":true,"fixedHeader":true,"columnDefs":[{"targets":[16,17,18,19],"visible":false},{"className":"dt-right","targets":[4,5,6,7,8,9,10,11,12,13,14]},{"name":"pcode_admin1","targets":0},{"name":"admin1","targets":1},{"name":"pcode_admin2","targets":2},{"name":"admin2","targets":3},{"name":"enquete_pnd","targets":4},{"name":"enquete_pdi","targets":5},{"name":"enquete_ref","targets":6},{"name":"enquete_ret","targets":7},{"name":"enquete_total","targets":8},{"name":"collecte_com_hote","targets":9},{"name":"collecte_pdi","targets":10},{"name":"collecte_refugie","targets":11},{"name":"collecte_retourne","targets":12},{"name":"collecte_total","targets":13},{"name":"taux_collecte","targets":14},{"name":"etat","targets":15},{"name":"etat_hote","targets":16},{"name":"etat_pdi","targets":17},{"name":"etat_refugie","targets":18},{"name":"etat_retourne","targets":19}],"buttons":[{"extend":"excel","text":"📥 Télécharger Excel","exportOptions":{"columns":":visible"}}],"order":[],"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[15]; $(this.api().cell(row, 13).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[15]; $(this.api().cell(row, 15).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[15]; $(this.api().cell(row, 14).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[16]; $(this.api().cell(row, 9).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[17]; $(this.api().cell(row, 10).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[18]; $(this.api().cell(row, 11).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[19]; $(this.api().cell(row, 12).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+</div></div><div class="tab-pane html-fill-item html-fill-container" role="tabpanel" id="card-tabset-12-3"><div class="card-body html-fill-item html-fill-container" data-title="Etat d'avancement I Admin3">
+<div class="cell-output-display html-fill-item html-fill-container">
+<div class="datatables html-widget html-fill-item html-fill-container" id="htmlwidget-623a4072b64346e2cd68" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-623a4072b64346e2cd68">{"x":{"filter":"none","vertical":false,"extensions":["Buttons","FixedHeader"],"data":[["CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM004","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM007","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010","CM010"],["Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Extrême-Nord","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Nord-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest","Sud-Ouest"],["CM004001","CM004001","CM004001","CM004001","CM004001","CM004001","CM004001","CM004001","CM004001","CM004002","CM004002","CM004002","CM004002","CM004002","CM004002","CM004002","CM004002","CM004002","CM004002","CM004003","CM004003","CM004003","CM004003","CM004003","CM004003","CM004003","CM004003","CM004003","CM004003","CM004003","CM004004","CM004004","CM004004","CM004004","CM004004","CM004004","CM004004","CM004005","CM004005","CM004005","CM004006","CM004006","CM004006","CM004006","CM004006","CM004006","CM004006","CM007001","CM007001","CM007001","CM007001","CM007002","CM007002","CM007002","CM007002","CM007002","CM007002","CM007003","CM007003","CM007003","CM007003","CM007003","CM007004","CM007004","CM007004","CM007004","CM007005","CM007005","CM007005","CM007005","CM007005","CM007005","CM007005","CM007006","CM007006","CM007006","CM007006","CM007006","CM007007","CM007007","CM007007","CM010001","CM010001","CM010001","CM010001","CM010001","CM010001","CM010002","CM010002","CM010002","CM010003","CM010003","CM010003","CM010004","CM010004","CM010004","CM010004","CM010005","CM010005","CM010005","CM010005","CM010005","CM010006","CM010006","CM010006","CM010006","CM010006"],["Diamaré","Diamaré","Diamaré","Diamaré","Diamaré","Diamaré","Diamaré","Diamaré","Diamaré","Logone-et-Chari","Logone-et-Chari","Logone-et-Chari","Logone-et-Chari","Logone-et-Chari","Logone-et-Chari","Logone-et-Chari","Logone-et-Chari","Logone-et-Chari","Logone-et-Chari","Mayo-Danay","Mayo-Danay","Mayo-Danay","Mayo-Danay","Mayo-Danay","Mayo-Danay","Mayo-Danay","Mayo-Danay","Mayo-Danay","Mayo-Danay","Mayo-Danay","Mayo-Kani","Mayo-Kani","Mayo-Kani","Mayo-Kani","Mayo-Kani","Mayo-Kani","Mayo-Kani","Mayo-Sava","Mayo-Sava","Mayo-Sava","Mayo-Tsanaga","Mayo-Tsanaga","Mayo-Tsanaga","Mayo-Tsanaga","Mayo-Tsanaga","Mayo-Tsanaga","Mayo-Tsanaga","Boyo","Boyo","Boyo","Boyo","Bui","Bui","Bui","Bui","Bui","Bui","Donga-Mantung","Donga-Mantung","Donga-Mantung","Donga-Mantung","Donga-Mantung","Menchum","Menchum","Menchum","Menchum","Mezam","Mezam","Mezam","Mezam","Mezam","Mezam","Mezam","Momo","Momo","Momo","Momo","Momo","Ngo-Ketunjia","Ngo-Ketunjia","Ngo-Ketunjia","Fako","Fako","Fako","Fako","Fako","Fako","Kupe-Manenguba","Kupe-Manenguba","Kupe-Manenguba","Lebialem","Lebialem","Lebialem","Manyu","Manyu","Manyu","Manyu","Meme","Meme","Meme","Meme","Meme","Ndian","Ndian","Ndian","Ndian","Ndian"],["CM004001001","CM004001002","CM004001003","CM004001004","CM004001005","CM004001006","CM004001007","CM004001008","CM004001009","CM004002001","CM004002002","CM004002003","CM004002004","CM004002005","CM004002006","CM004002007","CM004002008","CM004002009","CM004002010","CM004003001","CM004003002","CM004003003","CM004003004","CM004003005","CM004003006","CM004003007","CM004003008","CM004003009","CM004003010","CM004003011","CM004004001","CM004004002","CM004004003","CM004004004","CM004004005","CM004004006","CM004004007","CM004005001","CM004005002","CM004005003","CM004006001","CM004006002","CM004006003","CM004006004","CM004006005","CM004006006","CM004006007","CM007001001","CM007001002","CM007001003","CM007001004","CM007002001","CM007002002","CM007002003","CM007002004","CM007002005","CM007002006","CM007003001","CM007003002","CM007003003","CM007003004","CM007003005","CM007004001","CM007004002","CM007004003","CM007004004","CM007005001","CM007005002","CM007005003","CM007005004","CM007005005","CM007005006","CM007005007","CM007006001","CM007006002","CM007006003","CM007006004","CM007006005","CM007007001","CM007007002","CM007007003","CM010001001","CM010001002","CM010001003","CM010001004","CM010001005","CM010001006","CM010002001","CM010002002","CM010002003","CM010003001","CM010003002","CM010003003","CM010004001","CM010004002","CM010004003","CM010004004","CM010005001","CM010005002","CM010005003","CM010005004","CM010005005","CM010006001","CM010006002","CM010006003","CM010006008","CM010006009"],["Bogo","Dargala","Gazawa","Maroua 1er","Maroua 2e","Maroua 3e","Meri","Ndoukoula","Pette","Blangoua","Darak","Fotokol","Goulfey","Hile-Alifa","Kousseri","Logone-Birni","Makary","Waza","Zina","Datcheka","Gobo","Guere","Kai-Kai","Kalfou","Kar-Hay","Maga","Tchatibali","Vele","Wina","Yagoua","Guidiguis","Kaele","Mindif","Moulvoudaye","Moutourwa","Porhi","Taibong","Kolofata","Mora","Tokombere","Bourrha","Hina","Koza","Mayo-Moskota","Mogode","Mokolo","Soulede-Roua","Belo","Bum","Fundong","Njinikom","Jakiri","Kumbo","Mbven","Nkum","Noni","Oku","Ako","Misaje","Ndu","Nkambe","Nwa","Fungom","Furu-Awa","Menchum-Valley","Wum","Bafut","Bali","Bamenda 1st","Bamenda 2nd","Bamenda 3rd","Santa","Tubah","Batibo","Mbengwi","Ngie","Njikwa","Widikum","Babessi","Balikumbat","Ndop","Buea","Limbe 1st","Limbe 2nd","Limbe 3rd","Muyuka","Tiko","Bangem","Nguti","Tombel","Alou","Fontem","Wabane","Akwaya","Eyumodjock","Mamfe","Upper Bayang","Konye","Kumba 1st","Kumba 2nd","Kumba 3rd","Mbonge","Bamusso","Dikome Balue","Ekondo Titi","Mundemba","Toko"],[100,100,105,100,120,95,100,100,100,79,115,120,95,100,115,95,95,105,95,120,105,100,100,100,100,100,80,100,115,95,100,95,95,95,100,100,100,100,100,95,100,100,100,81,100,95,100,95,95,95,100,100,95,100,100,100,100,110,100,95,100,100,95,110,95,100,100,105,110,105,115,95,100,95,95,100,100,105,95,95,100,100,135,110,240,95,100,100,95,100,100,100,100,100,79,95,95,95,100,100,100,100,120,105,95,100,115],[65,0,0,47,62,64,0,0,65,74,68,73,71,74,70,73,75,72,0,0,63,0,73,0,0,71,0,66,0,56,0,57,0,68,0,0,0,75,75,71,0,63,75,74,0,75,49,63,47,66,65,72,72,69,62,59,70,70,62,66,71,72,66,50,73,70,62,0,0,0,0,61,65,64,62,58,57,68,62,72,73,74,63,60,0,74,66,0,70,64,63,66,0,66,65,73,73,72,71,71,65,74,62,57,70,66,0],[0,0,0,0,0,0,0,0,0,0,0,68,0,0,68,48,74,72,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,72,0,0,0,0,48,0,60,75,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,49,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,61,0,73,48,0,74,74,65,65,0,73,73,64,73,0,74,74,74,74,74,72,0,0,0,0,0,0,0,74,74,0,0,0,68,73,56,69,0,70,69,66,70,74,71,72,64,64,72,74,70,65,71,74,72,73,74,73,66,48,0,0,0,74,68,64,64,68,63,74,64,73,71,74,0,0,0,72,68,73,73,71,52,64,73,71,69,72,70,71,70,59,70,74,0,0,72,70,63],[165,100,105,147,182,159,100,100,165,214,183,334,214,174,327,290,309,314,95,193,241,164,246,100,174,245,154,240,189,223,100,152,95,163,100,100,100,249,321,166,100,163,243,276,156,299,224,228,211,227,235,246,238,241,226,223,242,254,232,226,242,246,233,233,242,243,228,153,110,105,115,230,233,223,221,226,220,247,221,240,244,248,198,170,240,241,234,173,238,235,215,230,173,286,213,240,238,238,241,230,235,248,182,162,237,236,178],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"],["Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré","Non démarré"]],"container":"<table class=\"compact small-text\">\n  <thead>\n    <tr>\n      <th>pcode_admin1<\/th>\n      <th>admin1<\/th>\n      <th>pcode_admin2<\/th>\n      <th>admin2<\/th>\n      <th>pcode_admin3<\/th>\n      <th>admin3<\/th>\n      <th>enquete_pnd<\/th>\n      <th>enquete_pdi<\/th>\n      <th>enquete_ref<\/th>\n      <th>enquete_ret<\/th>\n      <th>enquete_total<\/th>\n      <th>collecte_com_hote<\/th>\n      <th>collecte_pdi<\/th>\n      <th>collecte_refugie<\/th>\n      <th>collecte_retourne<\/th>\n      <th>collecte_total<\/th>\n      <th>taux_collecte<\/th>\n      <th>etat<\/th>\n      <th>etat_hote<\/th>\n      <th>etat_pdi<\/th>\n      <th>etat_refugie<\/th>\n      <th>etat_retourne<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"bPaginate":false,"dom":"Bfrtip","language":{"info":"Showing _TOTAL_ entries"},"pageLength":10,"autoWidth":true,"fixedHeader":true,"columnDefs":[{"targets":[18,19,20,21],"visible":false},{"className":"dt-right","targets":[6,7,8,9,10,11,12,13,14,15,16]},{"name":"pcode_admin1","targets":0},{"name":"admin1","targets":1},{"name":"pcode_admin2","targets":2},{"name":"admin2","targets":3},{"name":"pcode_admin3","targets":4},{"name":"admin3","targets":5},{"name":"enquete_pnd","targets":6},{"name":"enquete_pdi","targets":7},{"name":"enquete_ref","targets":8},{"name":"enquete_ret","targets":9},{"name":"enquete_total","targets":10},{"name":"collecte_com_hote","targets":11},{"name":"collecte_pdi","targets":12},{"name":"collecte_refugie","targets":13},{"name":"collecte_retourne","targets":14},{"name":"collecte_total","targets":15},{"name":"taux_collecte","targets":16},{"name":"etat","targets":17},{"name":"etat_hote","targets":18},{"name":"etat_pdi","targets":19},{"name":"etat_refugie","targets":20},{"name":"etat_retourne","targets":21}],"buttons":[{"extend":"excel","text":"📥 Télécharger Excel","exportOptions":{"columns":":visible"}}],"order":[],"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[17]; $(this.api().cell(row, 15).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[17]; $(this.api().cell(row, 17).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[17]; $(this.api().cell(row, 16).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[18]; $(this.api().cell(row, 11).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[19]; $(this.api().cell(row, 12).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[20]; $(this.api().cell(row, 13).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\nvar value=data[21]; $(this.api().cell(row, 14).node()).css({'background-color':value == \"Non démarré\" ? \"#f8d7da\" : value == \"En cours\" ? \"#fff3cd\" : value == \"Terminé\" ? \"#d1e7dd\" : null});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+</div>
+</div></div></div><bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /container fluid -->
+
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
+
+
+
+</body></html>
